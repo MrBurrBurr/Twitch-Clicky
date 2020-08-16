@@ -15,7 +15,7 @@
 
     function checkForPoints() {
         setTimeout(function () {
-            let elem = document.querySelectorAll('button.tw-button.tw-button--success.tw-interactive');
+            const elem = document.querySelectorAll('button.tw-button.tw-button--success.tw-interactive');
             if (elem.length === 1) elem[0].click();
             checkForPoints();
         }, 5000);

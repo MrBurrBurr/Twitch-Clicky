@@ -13,15 +13,13 @@
 (function() {
     'use strict';
 
+    setTimeout(() => checkForPoints(), 5000);
+    
     function checkForPoints() {
-        setTimeout(function () {
+        setTimeout(() => {
             const elem = document.querySelectorAll('button.tw-button.tw-button--success.tw-interactive');
             if (elem.length === 1) elem[0].click();
             checkForPoints();
         }, 5000);
     }
-
-    setTimeout(function () {
-        checkForPoints();
-    }, 5000);
 })();

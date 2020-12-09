@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Twitch-Clicky
-// @namespace    http://tampermonkey.net/
+// @namespace    https://frederick.win/
 // @version      0.1
 // @description  Automatically opens the twitch gift box for you.
 // @author       FREDERICK

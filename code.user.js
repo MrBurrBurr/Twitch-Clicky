@@ -14,7 +14,7 @@
     'use strict';
     
     function checkForPoints() {
-        const elem = document.querySelectorAll('button.tw-button.tw-button--success.tw-interactive');
+        const elem = document.querySelectorAll('button.tw-button.tw-button--success');
         if (elem.length === 1) elem[0].click();
     }
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch-Clicky
 // @namespace    https://frederick.win/
-// @version      0.3
+// @version      0.4
 // @description  Automatically opens the twitch gift box for you.
 // @author       FREDERICK
 // @match        https://www.twitch.tv/*
@@ -11,12 +11,24 @@
 // ==/UserScript==
 
 (function() {
-    'use strict';
+  'use strict';
+  
+  function checkForPoints() {
+    //const elem = document.querySelectorAll('button.tw-button.tw-button--success');
+    const potentials = document.querySelectorAll("[class*=ScCoreButtonSuccess]");
     
-    function checkForPoints() {
-        const elem = document.querySelectorAll('button.tw-button.tw-button--success');
-        if (elem.length === 1) elem[0].click();
+    elementLoop:
+    for (let i = 0; i < potentials.length; i++) {
+      let potential = potentials[i];
+      
+      for (let j = 0; j < potential.classList.length; j++) {
+        if (potential.classList[j].match(/^ScCoreButtonSuccess/)) {
+          potential.click();
+          continue elementLoop;
+        }
+      }
     }
+  }
 
-    const repeat = setInterval(checkForPoints, 5000);
+  const repeat = setInterval(checkForPoints, 5000);
 })();

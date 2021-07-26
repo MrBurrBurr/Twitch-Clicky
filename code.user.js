@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Twitch-Clicky
 // @namespace    https://frederick.win/
-// @version      0.4
+// @version      0.5
 // @description  Automatically opens the twitch gift box for you.
 // @author       FREDERICK
 // @match        https://www.twitch.tv/*

@@ -11,23 +11,13 @@
 // ==/UserScript==
 
 (function() {
-  'use strict';
-  
-  function checkForPoints() {
-    const potentials = document.querySelectorAll("[class*=ScCoreButtonSuccess]");
-    
-    elementLoop:
-    for (let i = 0; i < potentials.length; i++) {
-      let potential = potentials[i];
+    'use strict';
 
-      for (let j = 0; j < potential.classList.length; j++) {
-        if (potential.classList[j].match(/^ScCoreButtonSuccess/)) {
-          potential.click();
-          continue elementLoop;
-        }
-      }
+    const selector = "div.community-points-summary > div > div > div > div > button";
+    const handler = function() {
+        const el = document.querySelector(selector);
+        if (el) el.click();
     }
-  }
 
-  const repeat = setInterval(checkForPoints, 5000);
+    setInterval(handler, 5000);
 })();
